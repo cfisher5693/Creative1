@@ -16,9 +16,11 @@ public class MainScreen {
 	private JFrame window;
 	private JTextArea display = new JTextArea();
 	private GuessingGame guessingGame = new GuessingGame();
+	private JTextField field = new JTextField("Enter a number between 0 and 100 here!");
 	
 	public MainScreen(JFrame window) {
 		this.window = window;
+		window.setTitle("Guessing Game");
 	}
 
 	public void init() {
@@ -26,7 +28,6 @@ public class MainScreen {
 		var scrollPane = new JScrollPane(display, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setPreferredSize(new Dimension(500, 500));
 		cp.add(BorderLayout.CENTER, scrollPane);
-		var field = new JTextField("Enter a number between 0 and 100 here!");
 		var guessButton = new JButton("Guess!");
 		guessButton.addActionListener(new GGInsertListener(this));
 		JPanel panel = new JPanel();
@@ -41,5 +42,9 @@ public class MainScreen {
 
 	public JTextArea getDisplay() {
 		return display;
+	}
+
+	public JTextField getField() {
+		return field;
 	}
 }

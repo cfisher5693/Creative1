@@ -47,4 +47,21 @@ public class GuessingGame {
 			check();
 		}
 	}
+
+	public String GnC(int x) {
+		String str = "";
+		if(x == n) {
+			str = "correct!";
+		}
+		if(x > n && x <= 100) {
+			str = "too high, try again!";
+		}
+		if(x < n && x >= 0) {
+			str = "too low, try again!";
+		}
+		if(x > 100 || x < 0) {
+			str = "an invalid entry, try again!";
+		}
+		return str;
+	}
 }
